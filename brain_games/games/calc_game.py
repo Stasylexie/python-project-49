@@ -25,7 +25,6 @@ def check_answer(number: str):
         return str(num1-num2)
     else:
         return str(num1*num2)
-    # return str(eval(number))
 
 def calc_game() -> None:
     engine_game(question=QUESTION, func_check=check_answer, func_get_question=get_number)
