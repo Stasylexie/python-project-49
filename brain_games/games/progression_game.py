@@ -1,8 +1,6 @@
-import math
 import random
+
 from brain_games.engine import engine_game
-
-
 
 QUESTION = "What number is missing in the progression?"
 
@@ -23,7 +21,6 @@ def hide_number():
     else: 
         index = random.randint(2, len(progression) - 3)
 
-
     progression_w_gap = progression[:]
     progression_w_gap[index] = '..'
     progression_w_gap = list(map(str, progression_w_gap))
@@ -32,12 +29,12 @@ def hide_number():
     return progression_w_gap
 
 
-
 def check_answer(progression):
     progression = progression.split()
     index = progression.index('..')
 
-    step = (int(progression[-1]) - int(progression[0])) // (len(progression) - 1)
+    step = (int(progression[-1]) 
+            - int(progression[0])) // (len(progression) - 1)
 
     expected_number = None
 
@@ -52,5 +49,6 @@ def check_answer(progression):
 
 
 def progression_game() -> None:
-    engine_game(question=QUESTION, func_check=check_answer, func_get_question=hide_number)
+    engine_game(question=QUESTION, func_check=check_answer, 
+                func_get_question=hide_number)
 

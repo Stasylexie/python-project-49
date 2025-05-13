@@ -1,5 +1,6 @@
-from brain_games.cli import welcome_user
 from typing import Callable
+
+from brain_games.cli import welcome_user
 
 
 def engine_game(
@@ -9,16 +10,17 @@ def engine_game(
     print(question)
 
     for _ in range(3):
-        number = func_get_question() # передаваемая в движок функия для генерации вопроса
+        number = func_get_question()  
         print(f"Question: {number}")
 
         user_answer = input("Your answer: ").strip().lower()
 
-        correct_answer = func_check(number) # передаваемая в движок функия для получения правильного ответа
+        correct_answer = func_check(number) 
 
         if user_answer != correct_answer:
             print(
-                f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'."
+                f"""'{user_answer}' is wrong answer ;(. 
+                Correct answer was '{correct_answer}'."""
             )
             print(f"Let's try again, {name}!")
             break

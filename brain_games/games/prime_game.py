@@ -1,8 +1,6 @@
-import math
 import random
+
 from brain_games.engine import engine_game
-
-
 
 QUESTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
@@ -21,6 +19,8 @@ def check_answer(n: str):
             return "no"
     return "yes"
 
+
 def prime_game() -> None:
-    engine_game(question=QUESTION, func_check=check_answer, func_get_question=get_number)
+    engine_game(question=QUESTION, func_check=check_answer, 
+                func_get_question=get_number)
 

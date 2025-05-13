@@ -1,5 +1,6 @@
-from random import choice
 import random
+from random import choice
+
 from brain_games.engine import engine_game
 
 OPERATORS = ["+", "-", "*"]
@@ -20,11 +21,13 @@ def check_answer(number: str):
     num1, num2 = int(num1_str), int(num2_str)
 
     if operator == "+":
-        return str(num1+num2)
+        return str(num1 + num2)
     elif operator == "-":
-        return str(num1-num2)
+        return str(num1 - num2)
     else:
-        return str(num1*num2)
+        return str(num1 * num2)
+
 
 def calc_game() -> None:
-    engine_game(question=QUESTION, func_check=check_answer, func_get_question=get_number)
+    engine_game(question=QUESTION, func_check=check_answer,
+                 func_get_question=get_number)

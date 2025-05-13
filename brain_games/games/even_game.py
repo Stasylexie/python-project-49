@@ -1,5 +1,5 @@
 import random
-from typing import Callable
+
 from brain_games.engine import engine_game
 
 QUESTION = 'Answer "yes" if the number is even, otherwise answer "no".'
@@ -18,7 +18,8 @@ def get_number():
 
 
 def first_game() -> None:
-    engine_game(question=QUESTION, func_check=is_even, func_get_question=get_number)
+    engine_game(question=QUESTION, func_check=is_even,
+                 func_get_question=get_number)
 
 
 def check_answer():
