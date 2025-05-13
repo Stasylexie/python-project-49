@@ -18,27 +18,26 @@ def generate_progression(lenght=10, min_lenght=5):
 
 def hide_number():
     progression = generate_progression()
-    # получили рандом индекс из массива progression
-    index = random.randint(0, len(progression) - 1)
+    if len(progression) <= 5:
+        index = 2
+    else: 
+        index = random.randint(2, len(progression) - 3)
 
-    # конкретное число из массива по рандомному индексу
-    hidden_el = progression[index]
 
     progression_w_gap = progression[:]
     progression_w_gap[index] = '..'
+    progression_w_gap = list(map(str, progression_w_gap))
+    progression_w_gap = " ".join(progression_w_gap)
 
     return progression_w_gap
 
 
-# def make_question():
-#     prog = generate_progression()
-#     hide_prog = hide_number(prog)
-
 
 def check_answer(progression):
+    progression = progression.split()
     index = progression.index('..')
 
-    step = (progression[-1] - progression[0]) // (len(progression) - 1)
+    step = (int(progression[-1]) - int(progression[0])) // (len(progression) - 1)
 
     expected_number = None
 
@@ -50,9 +49,6 @@ def check_answer(progression):
         expected_number = int(progression[index - 1]) + step
 
     return str(expected_number)
-
-
-
 
 
 def progression_game() -> None:
